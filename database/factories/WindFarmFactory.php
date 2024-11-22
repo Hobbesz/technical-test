@@ -20,8 +20,8 @@ class WindFarmFactory extends Factory
         return [
             'user_id' => User::factory(),
             'name' => $this->faker->name(),
-            'longitude' => $this->faker->randomFloat(5, -90, 90),
             'latitude' => $this->faker->randomFloat(5, -90, 90),
+            'longitude' => $this->faker->randomFloat(5, -180, 180),
         ];
     }
 }

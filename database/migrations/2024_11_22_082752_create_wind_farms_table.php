@@ -18,8 +18,8 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class);
             $table->string('name');
-            $table->double('longitude', 7, 5);
             $table->double('latitude', 7, 5);
+            $table->double('longitude', 8, 5);
             $table->timestamps();
         });
     }
