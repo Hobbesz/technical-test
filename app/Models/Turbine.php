@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class WindFarm extends Model
+class Turbine extends Model
 {
     use HasFactory;
 
@@ -16,23 +16,15 @@ class WindFarm extends Model
      */
     protected $fillable = [
         'name',
-        'longitude',
-        'latitude',
+        'x_position_offset',
+        'y_position_offset',
     ];
 
     /**
-     * Get the user for the wind farm.
+     * Get the wind farm for the turbine.
      */
-    public function user()
+    public function windFarm()
     {
-        return $this->belongsTo(User::class);
-    }
-
-    /**
-     * Get the turbines for the wind farm.
-     */
-    public function turbines()
-    {
-        return $this->hasMany(Turbine::class);
+        return $this->belongsTo(WindFarm::class);
     }
 }
