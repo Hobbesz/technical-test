@@ -27,4 +27,12 @@ class Turbine extends Model
     {
         return $this->belongsTo(WindFarm::class);
     }
+
+    /**
+     * Get the parts for the turbine.
+     */
+    public function parts()
+    {
+        return $this->hasMany(Part::class);
+    }
 }
