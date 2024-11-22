@@ -41,4 +41,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the wind farms for the user.
+     */
+    public function windFarms()
+    {
+        return $this->hasMany(WindFarm::class);
+    }
 }
