@@ -43,10 +43,18 @@ class User extends Authenticatable
     ];
 
     /**
+     * Get the account for the user.
+     */
+    public function account()
+    {
+        return $this->belongsTo(WindFarm::class, Account::class);
+    }
+
+    /**
      * Get the wind farms for the user.
      */
     public function windFarms()
     {
-        return $this->hasMany(WindFarm::class);
+        return $this->hasManyThrough(WindFarm::class, Account::class);
     }
 }

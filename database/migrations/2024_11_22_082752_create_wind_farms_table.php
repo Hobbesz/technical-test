@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\User;
+use App\Models\Account;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,7 +16,7 @@ return new class extends Migration
     {
         Schema::create('wind_farms', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(Account::class);
             $table->string('name');
             $table->double('latitude', 7, 5);
             $table->double('longitude', 8, 5);

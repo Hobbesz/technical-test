@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
+use App\Models\Account;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +18,7 @@ class WindFarmFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => User::factory(),
+            'account_id' => Account::factory(),
             'name' => $this->faker->name(),
             'latitude' => $this->faker->randomFloat(5, -90, 90),
             'longitude' => $this->faker->randomFloat(5, -180, 180),
