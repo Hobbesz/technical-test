@@ -47,7 +47,7 @@ class User extends Authenticatable
      */
     public function account()
     {
-        return $this->belongsTo(WindFarm::class, Account::class);
+        return $this->belongsTo(Account::class);
     }
 
     /**
@@ -55,6 +55,6 @@ class User extends Authenticatable
      */
     public function windFarms()
     {
-        return $this->hasManyThrough(WindFarm::class, Account::class);
+        return $this->hasManyThrough(WindFarm::class, Account::class, 'id', 'account_id', 'account_id', 'id');
     }
 }

@@ -21,11 +21,11 @@ class WindFarm extends Model
     ];
 
     /**
-     * Get the user for the wind farm.
+     * Get the account for the wind farm.
      */
-    public function user()
+    public function account()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Account::class);
     }
 
     /**
