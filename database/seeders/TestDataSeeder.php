@@ -21,7 +21,7 @@ class TestDataSeeder extends Seeder
     public function run()
     {
         DB::beginTransaction();
-        $accounts = Account::factory()
+        Account::factory()
             ->count(2)
             ->has(User::factory()->count(3))
             ->has(WindFarm::factory()
