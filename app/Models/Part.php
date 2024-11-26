@@ -26,4 +26,12 @@ class Part extends Model
     {
         return $this->belongsTo(Turbine::class);
     }
+
+    /**
+     * Get the notes for the part.
+     */
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
+    }
 }
