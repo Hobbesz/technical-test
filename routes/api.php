@@ -23,4 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('wind-farms', WindFarmController::class)
         ->only('index');
+    Route::apiResource('parts/{part_id}/notes', NoteController::class);
 });
