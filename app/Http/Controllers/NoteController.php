@@ -10,6 +10,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class NoteController extends Controller
@@ -123,7 +124,7 @@ class NoteController extends Controller
         $user = User::find(Auth::id());
         $note = Note::where('id', $id)
             ->where('part_id', $partId)
-            ->whereHas('part.turbine.windFarm.account.users', function ($query) use ($user, $partId) {
+            ->whereHas('part.turbine.windFarm.account.users', function ($query) use ($user) {
                 $query->where('id', $user->id);
             })->first();
 
@@ -134,6 +135,14 @@ class NoteController extends Controller
         return $note;
     }
 
+    /**
+     * Validate the request data.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
+     *
+     * @throws \Illuminate\Validation\ValidationException
+     */
     private function validateRequestData($request)
     {
         return $request->validate([
