@@ -1,12 +1,19 @@
 import './bootstrap';
 import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
+import LoginView from './Views/LoginView.vue';
 
 const app = createApp();
 
 const router = createRouter({
     history: createWebHistory(),
-    routes: [],
+    routes: [
+        {
+            path: '/login',
+            component: LoginView,
+            name: 'login',
+        },
+    ],
 });
 
 app.use(router);
