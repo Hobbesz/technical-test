@@ -1,4 +1,7 @@
 <template>
+    <transition>
+        <view-turbine v-if="selectedTurbine" :turbine="selectedTurbine" :key="selectedTurbine.id" />
+    </transition>
     <google-map
         :api-key="apiKey"
         style="width: 100%; height: 500px"
@@ -40,3 +43,15 @@ const getTurbineLatLng = (turbine) => {
     };
 };
 </script>
+
+<style scoped>
+.v-enter-active {
+    max-height: 100vh;
+    transition: max-height 2s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+    max-height: 0;
+}
+</style>
