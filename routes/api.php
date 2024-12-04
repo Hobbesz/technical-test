@@ -20,4 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('wind-farms', WindFarmController::class)
         ->only('index', 'show', 'destroy');
+
+    Route::apiResource('wind-farms.turbines', TurbineController::class)
+        ->only('index', 'show');
 });
