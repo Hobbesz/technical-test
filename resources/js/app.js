@@ -3,6 +3,7 @@ import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
 import ListView from './Views/ListView.vue';
 import LoginView from './Views/LoginView.vue';
+import MapView from './Views/MapView.vue';
 
 const app = createApp();
 
@@ -13,6 +14,11 @@ const router = createRouter({
             path: '',
             component: ListView,
             name: 'home',
+        },
+        {
+            path: '/wind-farm/:id',
+            component: MapView,
+            name: 'wind-farm',
         },
         {
             path: '/login',

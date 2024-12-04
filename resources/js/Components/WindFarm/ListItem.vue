@@ -7,7 +7,7 @@
         </div>
         </div>
         <div class="shrink-0 flex sm:items-end gap-2">
-            <vue-button label="View Wind Farm" icon="Eye" />
+            <vue-button label="View Wind Farm" icon="Eye" @click="router.push({ name: 'wind-farm', params: { id: windFarm.id } })" />
             <vue-button negative label="Delete" icon="Trash" @click="destroy" />
         </div>
     </li>
