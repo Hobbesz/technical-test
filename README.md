@@ -64,4 +64,24 @@ composer install --ignore-platform-reqs
 ```
 
 ## Your Notes
-This is a place for you to add your notes, plans, thinking and any feedback you have for us of the task, please feel free to include whatever you like here, we'll make sure to read it. 
+This is a place for you to add your notes, plans, thinking and any feedback you have for us of the task, please feel free to include whatever you like here, we'll make sure to read it.
+
+### Notes
+I know there's a number of improvements that could be made to what I've done here. 
+
+### Google maps API key
+1. Go [here](https://developers.google.com/maps/documentation/javascript/get-api-key) and follow instructions to create an API key
+    - Make sure in the project that the Maps JavaScript API is enabled [here](https://console.cloud.google.com/google/maps-apis/api-list)
+
+### Setup project
+1. Copy .env.example to .env and update any values such as the `MIX_GOOGLE_MAPS_API_KEY` value retrieved above.
+1. Run `composer install`
+1. Run `sail npm install`
+1. Run `sail artisan migrate:fresh --seed` to seed the database with some sample data.
+1. Run `sail up -d` and then access at localhost.
+
+### Logging in
+You can use the email `toby.lerone@email.com` and password `password` to login. 
+
+### Tests
+Tests can be run via `sail test`
