@@ -23,4 +23,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::apiResource('wind-farms.turbines', TurbineController::class)
         ->only('index', 'show');
+
+    Route::apiResource('wind-farms.turbines.parts', PartController::class)
+        ->only('index', 'show', 'update');
 });
