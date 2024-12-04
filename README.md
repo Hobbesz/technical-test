@@ -70,6 +70,7 @@ This is a place for you to add your notes, plans, thinking and any feedback you 
 I know there's a number of improvements that could be made to what I've done here. 
 
 ### Google maps API key
+This is only needed if building yourself, as my API key has been built into the code for production, but has restrictions on it.
 1. Go [here](https://developers.google.com/maps/documentation/javascript/get-api-key) and follow instructions to create an API key
     - Make sure in the project that the Maps JavaScript API is enabled [here](https://console.cloud.google.com/google/maps-apis/api-list)
 
